@@ -1,8 +1,10 @@
-@media (max-width: 991px) {
-    .header__top_text {
+@media (max-width: 1200px) {
+    header .header__top_text {
         display: none;
     }
+}
 
+@media (max-width: 992px) {
     .header__navbar_row {
         justify-content: start;
         flex-direction: column;
@@ -51,6 +53,10 @@
         font-size: 16px;
         margin-bottom: 10px;
     }
+
+    .links-table .fast-connect-box {
+        width: calc(100% / 2);
+    }
 }
 
 @media (max-width: 767px) {
@@ -65,7 +71,7 @@
         border-bottom: 1px solid rgba(16, 24, 40, 0.1);
     }
 
-    .tel_nomer {
+    header .tel_nomer {
         display: none;
     }
 
@@ -80,6 +86,11 @@
         justify-content: center;
         order: 0;
     }
+
+    .links-table .fast-connect-box {
+        width: 100%;
+        padding: 40px 20px;
+    }
 }
 
 @media (min-width: 992px) {
@@ -91,6 +102,7 @@
         padding: 20px;
         background-color: #1466B3;
         opacity: 1;
+        z-index: 10;
         transition: left 0.4s;
     }
 
@@ -118,6 +130,11 @@
         left: -5%;
         z-index: 0;
         padding: 10px;
+    }
+
+    /* main slider */
+    .main-slider {
+        height: calc(100vh - 156px);
     }
 }
 

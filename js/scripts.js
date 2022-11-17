@@ -1,11 +1,35 @@
 $(document).ready(function () {
-    "use strict";
 
-    // $('.header__navbar_bars').on('click', showBigMenu);
-    // function showBigMenu() {
-    //     $(this).toggleClass('active');
-    // }
 
+    // slick slider start
+    $('.news-slider').slick({
+        nav: true,
+        dots: false,
+        infinite: true,
+        speed: 500,
+        autoplay: true,
+        autoplaySpeed: 2000,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        responsive: [
+            {
+                breakpoint: 1100,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+        ]
+    });
+
+    // handle navbar start
     if ($(this).innerWidth() <= 991) {
         $('.header__navbar_bars').on('click', function () {
             if ($(this).hasClass('active')) {
@@ -28,6 +52,38 @@ $(document).ready(function () {
             $('.big-nav-list').addClass('deactive')
         })
     }
+
+    // handle count start
+    var a = 0;
+    $(window).scroll(function () {
+        var numbersTop = $('.numbers').offset().top - window.innerHeight;
+        if (a == 0 && $(window).scrollTop() > numbersTop) {
+            $('.numbers .counter-value').each(function () {
+                var $this = $(this),
+                    countTo = $this.attr('data-count');
+                $({
+                    countNum: $this.text()
+                }).animate({
+                    countNum: countTo
+                },
+                    {
+
+                        duration: 1500,
+                        easing: 'swing',
+                        step: function () {
+                            $this.text(Math.floor(this.countNum));
+                        },
+                        complete: function () {
+                            $this.text(this.countNum);
+                        }
+
+                    });
+            });
+            a = 1;
+        }
+
+    });
+
 
 
 
