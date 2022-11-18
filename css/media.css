@@ -91,6 +91,19 @@
         width: 100%;
         padding: 40px 20px;
     }
+
+    .leader-task-btns button {
+        width: 160px;
+        padding: 16px 40px;
+        line-height: 18px;
+    }
+}
+
+@media (max-width: 411px) {
+    .copy-button {
+        display: block;
+        margin: 5px auto 0;
+    }
 }
 
 @media (min-width: 992px) {
@@ -133,7 +146,7 @@
     }
 
     /* main slider */
-    .main-slider {
+    .home-main-slider {
         height: calc(100vh - 156px);
     }
 }
