@@ -86,10 +86,44 @@
                         </div>
 
                         <div class="eyebox">
-                            <i class="fas fa-eye eyebox-icon"></i>
-                            <p class="eyebox-text">
-                                Ko'zi ojizlar uchun
-                            </p>
+                            <div class="dropdown">
+                                <button class="btn btn-white dropdown-toggle eye-btn" type="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fas fa-eye eyebox-icon"></i>
+                                    <p class="eyebox-text">
+                                        Ko'zi ojizlar uchun
+                                    </p>
+                                </button>
+                                <ul class="dropdown-menu eye-dropdown-menu">
+                                    <li class="eye-item">
+                                        Tashqi ko'rinish
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li class="d-flex align-items-center eye-item">
+                                        <button class="eye-function-btn simple-theme">A</button>
+                                        <button class="eye-function-btn gray-theme">A</button>
+                                        <button class="eye-function-btn white-black-theme">A</button>
+                                    </li>
+                                    <li class="eye-item">
+                                        Shrift hajmi
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li class="eye-item">
+                                        <p class="eye-function-info mb-0">
+                                            <span>0%</span>
+                                            Kattalashtirish
+                                        </p>
+                                        <input type="range" class="form-range window-range">
+                                    </li>
+                                    <li class="eye-item">
+                                        <p class="eye-function-info mb-0">
+                                            <span>0%</span>
+                                            Kattalashtirish
+                                        </p>
+                                        <input type="range" class="form-range page-range">
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -107,24 +141,25 @@
                         <span></span>
                     </div>
 
-                    <ul class="header__navbar_list">
+                    <ul class="primary-menu header__navbar_list">
                         <li class="header__navbar_item">
                             Hokimiyat haqida
                             <ul>
                                 <li><a href="#">Hokimiyat tarixi</a></li>
                                 <li><a href="rahbariyat.html">Rahbariyat</a></li>
                                 <li><a href="tuzilma.html">Tashkiliy tuzilma</a></li>
-                                <li><a href="#">Item #4</a></li>
+                                <li><a href="funksiyalar.html">Viloyat hokimligi funktsiyalari, vazifalari, huquqlari va
+                                        majburiyatlari</a></li>
+                                <li><a href="qabul.html">Fuqarolarni qabul qilish tartibi</a></li>
+                                <li><a href="qabul.html">Fuqarolarni qabul qilish tartibi</a></li>
+                                <li><a href="rekvizit.html">Rekvizitlar</a></li>
+                                <li><a href="aloqa.html">Aloqa</a></li>
+                                <li><a href="ochiq-malumot.html">Ochiq ma'lumotlar</a></li>
+                                <li><a href="hokimga-murojaat.html">Hokimga murojaat</a></li>
                             </ul>
                         </li>
                         <li class="header__navbar_item">
-                            Yangiliklar
-                            <ul>
-                                <li><a href="#">Hokimiyat tarixi</a></li>
-                                <li><a href="#">Item #2</a></li>
-                                <li><a href="#">Item #3</a></li>
-                                <li><a href="#">Item #4</a></li>
-                            </ul>
+                            <a href="news.html" home-link>Yangiliklar</a>
                         </li>
                         <li class="header__navbar_item">
                             Boshqarma va tashkilotlar
@@ -236,7 +271,9 @@
                             <div class="copy-elements">
                                 <div class="date-view order-0">
                                     <i class="fas fa-calendar"></i>
-                                    <span class="hours">00:00</span> / <span class="date">25.04.2022</span>
+                                    <p>
+                                        <span class="hours">00:00</span> / <span class="date">25.04.2022</span>
+                                    </p>
                                 </div>
                                 <button class="copy-button order-2 order-sm-1">
                                     <i class="fal fa-clone"></i>
@@ -244,9 +281,9 @@
                                 </button>
                                 <div class="date-view order-1 order-sm-2">
                                     <i class="fas fa-eye"></i>
-                                    <span class="view-numbers">
-                                        4918
-                                    </span>
+                                    <p>
+                                        <span class="view-numbers">4918</span>
+                                    </p>
                                 </div>
                             </div>
                         </div>
