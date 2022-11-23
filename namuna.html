@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./libs/calendar/main.min.css">
     <link rel="stylesheet" href="./libs/slick/slick-theme.css">
     <link rel="stylesheet" href="./libs/slick/slick.css">
-    <link rel="stylesheet" href="./libs/aos.css">
     <link rel="stylesheet" href="./libs/bootstrap.min.css">
     <title>Sardoba tuman hokimligi</title>
     <link rel="stylesheet" href="./css/all.min.css">
@@ -27,7 +27,7 @@
                 <div class="header__top_row">
                     <a href="index.html" class="header__top_logo">
                         <img src="img/gerb_logo.png" alt="Logo image" class="header__top_logo-img">
-                        <span class="header__top_logo-text">Sardoba tuman hokimligi</span>
+                        <span class="header__top_logo-text">Mirzaobod tuman hokimligi</span>
                     </a>
 
                     <div class="header__top_text">
@@ -75,9 +75,10 @@
                                 <button class="btn btn-white dropdown-toggle lang-btn" type="button"
                                     data-bs-toggle="dropdown" aria-expanded="false">
                                     <i class="fal fa-language lang-icon"></i>
+                                    UZ
                                 </button>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Uz</a></li>
+                                    <li><a class="dropdown-item active" href="#">Uz</a></li>
                                     <li><a class="dropdown-item" href="#">Ru</a></li>
                                     <li><a class="dropdown-item" href="#">Eng</a></li>
                                 </ul>
@@ -129,118 +130,121 @@
             </div>
         </div>
         <!-- header top end -->
+    </header>
 
-        <!-- header navabr start -->
-        <div class="header__navbar">
-            <div class="container">
-                <div class="header__navbar_row">
-                    <div class="header__navbar_bars">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
+    <!-- header navabr start -->
+    <div class="header__navbar">
+        <div class="container">
+            <div class="header__navbar_row">
+                <div class="header__navbar_bars">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
 
-                    <ul class="primary-menu header__navbar_list">
-                        <li class="header__navbar_item">
-                            Hokimiyat haqida
-                            <ul>
-                                <li><a href="namuna.html">NAMUNA</a></li>
-                                <li><a href="#">Hokimiyat tarixi</a></li>
-                                <li><a href="rahbariyat.html">Rahbariyat</a></li>
-                                <li><a href="tuzilma.html">Tashkiliy tuzilma</a></li>
-                                <li><a href="funksiyalar.html">Viloyat hokimligi funktsiyalari, vazifalari, huquqlari va
-                                        majburiyatlari</a></li>
-                                <li><a href="qabul.html">Fuqarolarni qabul qilish tartibi</a></li>
-                                <li><a href="qabul.html">Fuqarolarni qabul qilish tartibi</a></li>
-                                <li><a href="rekvizit.html">Rekvizitlar</a></li>
-                                <li><a href="aloqa.html">Aloqa</a></li>
-                                <li><a href="ochiq-malumot.html">Ochiq ma'lumotlar</a></li>
-                                <li><a href="hokimga-murojaat.html">Hokimga murojaat</a></li>
-                            </ul>
-                        </li>
-                        <li class="header__navbar_item">
-                            <a href="news.html" home-link>Yangiliklar</a>
-                        </li>
-                        <li class="header__navbar_item">
-                            Boshqarma va tashkilotlar
-                            <ul>
-                                <li><a href="#">Hokimiyat tarixi</a></li>
-                                <li><a href="#">Item #2</a></li>
-                                <li><a href="#">Item #3</a></li>
-                                <li><a href="#">Item #4</a></li>
-                            </ul>
-                        </li>
-                        <li class="header__navbar_item">
-                            Mahalliy Kengash
-                        </li>
-                        <li class="header__navbar_item">
-                            Matbuot xizmati
-                        </li>
-                        <li class="header__navbar_item">
-                            Aloqa
-                        </li>
-                        <li class="header__navbar_item">
-                            Ochiq ma'lumotlar
-                        </li>
-                    </ul>
+                <ul class="primary-menu header__navbar_list">
+                    <li class="header__navbar_item">
+                        Hokimiyat haqida
+                        <ul>
+                            <li><a href="namuna.html">NAMUNA</a></li>
+                            <li><a href="rahbariyat.html">Rahbariyat</a></li>
+                            <li><a href="tuzilma.html">Tashkiliy tuzilma</a></li>
+                            <li><a href="funksiyalar.html">Viloyat hokimligi funktsiyalari, vazifalari, huquqlari va
+                                    majburiyatlari</a></li>
+                            <li><a href="qabul.html">Fuqarolarni qabul qilish tartibi</a></li>
+                            <li><a href="rekvizit.html">Rekvizitlar</a></li>
+                            <li><a href="hokimga-murojaat.html">Hokimga murojaat</a></li>
+                        </ul>
+                    </li>
+                    <li class="header__navbar_item">
+                        <a href="news.html" home-link>Yangiliklar</a>
+                    </li>
+                    <li class="header__navbar_item">
+                        Boshqarma va tashkilotlar
+                    </li>
+                    <li class="header__navbar_item">
+                        Mahalliy Kengash
+                        <ul>
+                            <li><a href="senat.html">Senat a'zolari</a></li>
+                            <li><a href="#">Deputatlar tarkibi</a></li>
+                            <li><a href="#">Kotibiyat mudirlari</a></li>
+                        </ul>
+                    </li>
+                    <li class="header__navbar_item">
+                        Matbuot xizmati
+                        <ul>
+                            <li><a href="#">Media xizmati haqida</a></li>
+                            <li><a href="#">Media rejalar</a></li>
+                            <li><a href="#">Veb saytda joylashtirilgan ma'lumotlar</a></li>
+                        </ul>
+                    </li>
+                    <li class="header__navbar_item">
+                        <a href="aloqa.html" home-link>Aloqa</a>
+                    </li>
+                    <li class="header__navbar_item">
+                        <a href="ochiq-malumot.html" home-link>Ochiq ma'lumotlar</a>
+                    </li>
+                </ul>
 
-                    <div class="big-nav-list deactive d-none d-lg-block">
-                        <div class="container">
-                            <div class="row mb-3">
-                                <div class="header__navbar_bars active">
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                </div>
+                <div class="big-nav-list deactive d-none d-lg-block">
+                    <div class="container">
+                        <div class="row mb-3">
+                            <div class="header__navbar_bars active">
+                                <span></span>
+                                <span></span>
+                                <span></span>
                             </div>
-                            <ul class="header__navbar_list">
-                                <li class="header__navbar_item">
-                                    Hokimiyat haqida
-                                    <ul>
-                                        <li><a href="#">Hokimiyat tarixi</a></li>
-                                        <li><a href="#">Item #2</a></li>
-                                        <li><a href="#">Item #3</a></li>
-                                        <li><a href="#">Item #4</a></li>
-                                    </ul>
-                                </li>
-                                <li class="header__navbar_item">
-                                    Yangiliklar
-                                    <ul>
-                                        <li><a href="#">Hokimiyat tarixi</a></li>
-                                        <li><a href="#">Item #2</a></li>
-                                        <li><a href="#">Item #3</a></li>
-                                        <li><a href="#">Item #4</a></li>
-                                    </ul>
-                                </li>
-                                <li class="header__navbar_item">
-                                    Boshqarma va tashkilotlar
-                                    <ul>
-                                        <li><a href="#">Hokimiyat tarixi</a></li>
-                                        <li><a href="#">Item #2</a></li>
-                                        <li><a href="#">Item #3</a></li>
-                                        <li><a href="#">Item #4</a></li>
-                                    </ul>
-                                </li>
-                                <li class="header__navbar_item">
-                                    Mahalliy Kengash
-                                </li>
-                                <li class="header__navbar_item">
-                                    Matbuot xizmati
-                                </li>
-                                <li class="header__navbar_item">
-                                    Aloqa
-                                </li>
-                                <li class="header__navbar_item">
-                                    Ochiq ma'lumotlar
-                                </li>
-                            </ul>
                         </div>
+                        <ul class="header__navbar_list">
+                            <li class="header__navbar_item">
+                                Hokimiyat haqida
+                                <ul>
+                                    <li><a href="namuna.html">NAMUNA</a></li>
+                                    <li><a href="rahbariyat.html">Rahbariyat</a></li>
+                                    <li><a href="tuzilma.html">Tashkiliy tuzilma</a></li>
+                                    <li><a href="funksiyalar.html">Viloyat hokimligi funktsiyalari, vazifalari,
+                                            huquqlari va
+                                            majburiyatlari</a></li>
+                                    <li><a href="qabul.html">Fuqarolarni qabul qilish tartibi</a></li>
+                                    <li><a href="rekvizit.html">Rekvizitlar</a></li>
+                                    <li><a href="hokimga-murojaat.html">Hokimga murojaat</a></li>
+                                </ul>
+                            </li>
+                            <li class="header__navbar_item">
+                                <a href="news.html" home-link>Yangiliklar</a>
+                            </li>
+                            <li class="header__navbar_item">
+                                Boshqarma va tashkilotlar
+                            </li>
+                            <li class="header__navbar_item">
+                                Mahalliy Kengash
+                                <ul>
+                                    <li><a href="senat.html">Senat a'zolari</a></li>
+                                    <li><a href="#">Deputatlar tarkibi</a></li>
+                                    <li><a href="#">Kotibiyat mudirlari</a></li>
+                                </ul>
+                            </li>
+                            <li class="header__navbar_item">
+                                Matbuot xizmati
+                                <ul>
+                                    <li><a href="#">Media xizmati haqida</a></li>
+                                    <li><a href="#">Media rejalar</a></li>
+                                    <li><a href="#">Veb saytda joylashtirilgan ma'lumotlar</a></li>
+                                </ul>
+                            </li>
+                            <li class="header__navbar_item">
+                                <a href="aloqa.html" home-link>Aloqa</a>
+                            </li>
+                            <li class="header__navbar_item">
+                                <a href="ochiq-malumot.html" home-link>Ochiq ma'lumotlar</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- header navabr end -->
-    </header>
+    </div>
+    <!-- header navabr end -->
     <!-- ========================= -->
     <!-- ===  Header End  === -->
     <!-- ========================= -->
@@ -251,13 +255,12 @@
     <!-- ========================= -->
     <main>
         <!-- main slider start -->
-        <section class="main-slider home-main-slider h-auto">
-            <div class="container-fluid">
+        <section class="example-page">
+            <div class="container">
                 <div class="row">
                     <div class="col-12 col-lg-8 col-xl-9 px-0">
-                        <h2 class="section-title">So‘nggi yangiliklar</h2>
                         <div class="row">
-                            <div class="col-12 col-xl-6 news-big-box">
+                            <div class="col-12 col-xxl-6 news-big-box">
                                 <div class="row">
                                     <div class="col-12">
                                         <div class="news-img">
@@ -304,7 +307,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-12 col-xl-6">
+                            <div class="col-12 col-xxl-6">
                                 <div class="row mb-5">
                                     <div class="col-12 col-md-6 mb-3 mb-md-0">
                                         <div class="news-img">
@@ -398,39 +401,53 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="all-btn-container">
+                        <div class="all-btn-container pb-5">
                             <a href="#" class="news-all-btn">Barcha yangiliklar</a>
                         </div>
                     </div>
                     <div class="col-12 col-lg-4 col-xl-3 px-0">
-                        <table class="fast-connect-parent">
-                            <tr>
-                                <td class="fast-connect-box">
-                                    <a href="#" class="box">
-                                        <div class="fast-connect-img">
-                                            <img src="img/fast_connect1.png" alt="">
-                                        </div>
-                                        <span class="fast-connect-text">O‘z fikrlaringizni yuboring</span>
-                                    </a>
-                                </td>
-                                <td class="fast-connect-box">
-                                    <a href="#" class="box">
-                                        <div class="fast-connect-img">
-                                            <img src="img/fast_connect2.png" alt="">
-                                        </div>
-                                        <span class="fast-connect-text">Hokimga murojaat</span>
-                                    </a>
-                                </td>
-                                <td class="fast-connect-box">
-                                    <a href="#" class="box">
-                                        <div class="fast-connect-img">
-                                            <img src="img/fast_connect3.png" alt="">
-                                        </div>
-                                        <span class="fast-connect-text">Muammolar haqida xabar bering</span>
-                                    </a>
-                                </td>
-                            </tr>
-                        </table>
+                        <div class="container">
+                            <table class="fast-connect-parent mb-50">
+                                <tr>
+                                    <td class="fast-connect-box">
+                                        <a href="#" class="box">
+                                            <div class="fast-connect-img">
+                                                <img src="img/fast_connect1.png" alt="">
+                                            </div>
+                                            <span class="fast-connect-text">O‘z fikrlaringizni yuboring</span>
+                                        </a>
+                                    </td>
+                                    <td class="fast-connect-box">
+                                        <a href="#" class="box">
+                                            <div class="fast-connect-img">
+                                                <img src="img/fast_connect2.png" alt="">
+                                            </div>
+                                            <span class="fast-connect-text">Hokimga murojaat</span>
+                                        </a>
+                                    </td>
+                                    <td class="fast-connect-box">
+                                        <a href="#" class="box">
+                                            <div class="fast-connect-img">
+                                                <img src="img/fast_connect3.png" alt="">
+                                            </div>
+                                            <span class="fast-connect-text">Muammolar haqida xabar bering</span>
+                                        </a>
+                                    </td>
+                                </tr>
+                            </table>
+                            <h2 class="section-title mb-30">Tadbirlar taqvimi</h2>
+                            <div class="row">
+                                <div class="col-12 col-md-6 col-lg-12">
+                                    <div class="calendar">
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6 col-lg-12 d-none d-md-block">
+                                    <div class="text-start text-md-end">
+                                        <img src="./img/2022.png" alt="year name" class="year-name-img">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -438,7 +455,7 @@
         <!-- main slider end -->
 
         <!-- news section start -->
-        <section class="news">
+        <section class="py-5">
             <div class="container">
                 <!-- SLIDER START -->
                 <div class="news-slider">
@@ -964,6 +981,7 @@
 
 
     <script src="./libs/jquery.js"></script>
+    <script src="./libs/calendar/main.min.js"></script>
     <script src="./libs/slick/slick.min.js"></script>
     <script src="./libs/countTo.js"></script>
     <script src="./libs/bootstrap.bundle.min.js"></script>

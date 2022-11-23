@@ -29,7 +29,7 @@ html {
 }
 
 .color-black-theme {
-    color: var(--theme-color) !important;
+    color: #ddd !important;
 }
 
 .header__top {
@@ -146,7 +146,15 @@ html {
 }
 
 .lang-btn {
-    font-size: 25px;
+    font-size: 14px;
+    line-height: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: var(--black-text-color);
+    font-weight: 700;
+    text-transform: uppercase;
 }
 
 .lang-btn::after {
@@ -157,6 +165,14 @@ html {
 
 .lang-btn:focus {
     box-shadow: none;
+}
+
+.lang-btn .lang-icon {
+    font-size: 20px;
+}
+
+.translatebox .dropdown-item.active {
+    background-color: var(--bg-blue-color);
 }
 
 .eyebox {
@@ -245,7 +261,9 @@ html {
 .header__navbar {
     background: #1466B3;
     padding: 20px 0;
-    position: relative;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 .header__navbar_row {
@@ -301,7 +319,6 @@ html {
     font-weight: 600;
     font-size: 14px;
     line-height: 15px;
-    font-feature-settings: 'pnum' on, 'lnum' on;
     color: var(--color-white);
     cursor: pointer;
     z-index: 1;
@@ -312,12 +329,22 @@ html {
     position: absolute;
     top: 105%;
     left: -10%;
-    padding: 20px;
+    padding: 20px 20px 20px 30px;
     background-color: var(--bg-blue-color);
     transition: all 0.4s;
     opacity: 0;
     z-index: 1;
     transform: translateY(-50%) scaleY(0);
+}
+
+.primary-menu .header__navbar_item ul::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 20px;
+    height: calc(100% - 40px);
+    width: 2px;
+    background-color: var(--color-white);
 }
 
 .primary-menu .header__navbar_item ul.over-class {
@@ -326,16 +353,15 @@ html {
     transition: all 0.4s;
 }
 
-.header__navbar_item li {
+.header__navbar_item li:not(:last-child) {
     margin-bottom: 10px;
 }
 
 .header__navbar_item a {
     display: block;
     font-weight: 600;
-    font-size: 12px;
-    line-height: 15px;
-    font-feature-settings: 'pnum' on, 'lnum' on;
+    font-size: 14px;
+    line-height: 18px;
     color: var(--color-white);
     text-decoration: none;
     position: relative;
@@ -735,7 +761,23 @@ html {
     text-decoration: none;
 }
 
-.media-box>* {
+.media-image-list {
+    margin-bottom: 20px;
+}
+
+.media-video-list .slick-slider,
+.media-image-list .slick-slider {
+    margin: 0 -15px;
+}
+
+.media-video-list .slick-slide,
+.media-image-list .slick-slide {
+    text-align: center;
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+.media-box>img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -987,15 +1029,21 @@ html {
     flex-wrap: wrap;
 }
 
+.leader-task-btns.nav-tabs,
+.leader-task-btns.nav-tabs .nav-link {
+    border: none;
+    border-radius: 0;
+}
+
 .leader-task-btns button {
     width: 188px;
     padding: 20px 50px;
-    background: #F0F9FF;
+    background: #F0F9FF !important;
     font-weight: 500;
     font-size: 16px;
     line-height: 20px;
     text-align: center;
-    color: #026AA2;
+    color: #026AA2 !important;
     border: none;
     margin-top: 10px;
 }
@@ -1005,8 +1053,8 @@ html {
 }
 
 .leader-task-btns button.active {
-    background: var(--bg-blue-color);
-    color: var(--color-white);
+    background: var(--bg-blue-color) !important;
+    color: var(--color-white) !important;
 }
 
 .leader-task {
@@ -1424,4 +1472,13 @@ textarea.appeal-form-control {
 
 .col-12 .news-selected-page-text:last-child {
     margin: 0;
+}
+
+/* senat page style */
+.senat-page {
+    padding: 50px 0 150px;
+}
+
+.example-page {
+    padding: 50px 0 70px;
 }
