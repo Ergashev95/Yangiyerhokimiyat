@@ -1122,6 +1122,7 @@ html {
 /* calendar style */
 .calendar {
     width: 320px;
+    height: 260px;
     padding: 10px;
     border: 1px solid #EAECF0;
     margin-bottom: 30px;
@@ -1159,8 +1160,33 @@ html {
     text-decoration: none !important;
 }
 
+.calendar .fc-button {
+    padding: 0 !important;
+}
+
+.calendar td[has-cell='has-cell'] {
+    background-color: var(--bg-blue-color);
+    cursor: pointer;
+    position: relative;
+}
+
+.calendar td[has-cell='has-cell']::after {
+    content: '';
+    /* width: 250px;
+    height: 100px;
+    background-color: var(--bg-blue-color);
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2); */
+}
+
+.calendar td[has-cell='has-cell'] a {
+    color: #fff;
+}
 .calendar .fc-toolbar-chunk button[title="This month"] {
-    display: none;
+    /* display: none; */
+    padding: 0 5px !important;
 }
 
 .calendar .fc-daygrid-day-top {
@@ -1171,6 +1197,10 @@ html {
 .calendar .fc-daygrid-day-bg {
     display: none;
 }
+
+/* td[role=gridcell]{
+    cursor: pointer;
+} */
 
 /* structure */
 .structure {
