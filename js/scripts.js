@@ -62,6 +62,16 @@ $(document).ready(function () {
 
 
     // slick slider start
+    $('.example-slider').slick({
+        nav: false,
+        dots: true,
+        infinite: true,
+        speed: 500,
+        autoplay: true,
+        autoplaySpeed: 1200,
+        slidesToShow: 1,
+        slidesToScroll: 1
+    });
     $('.news-slider').slick({
         nav: false,
         dots: false,
@@ -280,7 +290,6 @@ document.addEventListener('DOMContentLoaded', function () {
         document.querySelectorAll('.fc-scroller').forEach(scroll => {
             scroll.style.overflow = 'hidden'
         })
-
         var mbDates = [
             { id: 1, date: '2022-11-11', title: "Bayram" },
             { id: 2, date: '2022-11-21', title: "Bayram1" },
@@ -288,6 +297,28 @@ document.addEventListener('DOMContentLoaded', function () {
             { id: 4, date: '2022-11-28', title: "Bayram3" },
         ]
         const elAllDateCell = document.querySelectorAll('td[role=gridcell]')
+        const elCalendarPrevBtn = document.querySelector('.fc-prev-button')
+        const elCalendarNextBtn = document.querySelector('.fc-next-button')
+        elCalendarPrevBtn.addEventListener('click', function () {
+            elAllDateCell.forEach(cell => {
+                var cellDate = cell.getAttribute('data-date');
+                for (let i = 0; i < mbDates.length; i++) {
+                    if (mbDates[i].date === cellDate) {
+                        cell.setAttribute('has-cell', 'has-cell')
+                    }
+                }
+            })
+        })
+        elCalendarNextBtn.addEventListener('click', function () {
+            elAllDateCell.forEach(cell => {
+                var cellDate = cell.getAttribute('data-date');
+                for (let i = 0; i < mbDates.length; i++) {
+                    if (mbDates[i].date === cellDate) {
+                        cell.setAttribute('has-cell', 'has-cell')
+                    }
+                }
+            })
+        })
         elAllDateCell.forEach(cell => {
             var cellDate = cell.getAttribute('data-date');
             for (let i = 0; i < mbDates.length; i++) {
@@ -295,12 +326,16 @@ document.addEventListener('DOMContentLoaded', function () {
                     cell.setAttribute('has-cell', 'has-cell')
                 }
             }
+
             cell.addEventListener('click', function () {
                 var cellDate = cell.getAttribute('data-date');
                 mbDates.filter(data => data.date == cellDate);
                 for (let i = 0; i < mbDates.length; i++) {
                     if (mbDates[i].date === cellDate) {
-                        alert('Ok...')
+                        var tadbirModal = document.createElement('div');
+                        tadbirModal.classList.add('tadbir-modal');
+                        tadbirModal.textContent = mbDates[i].title
+                        this.appendChild(tadbirModal)
                     }
                 }
             })
