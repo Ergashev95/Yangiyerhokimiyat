@@ -62,6 +62,16 @@ $(document).ready(function () {
 
 
     // slick slider start
+    $('.example-slider').slick({
+        nav: false,
+        dots: true,
+        infinite: true,
+        speed: 500,
+        autoplay: true,
+        autoplaySpeed: 1200,
+        slidesToShow: 1,
+        slidesToScroll: 1
+    });
     $('.news-slider').slick({
         nav: false,
         dots: false,
@@ -241,77 +251,94 @@ $(document).ready(function () {
         $('.copy-button').on('click', function () {
             let pageRoute = window.location.href
             navigator.clipboard.writeText(pageRoute)
-            $('.toast-body').html("Copied: " + pageRoute)
+            $('.toast-body').html("Nusxalandi: " + pageRoute)
             const toast = new bootstrap.Toast($('#liveToast '))
             toast.show()
         })
     }
 
-
+    // 5 * 205 / 8
 })
-
 // calendar start
 document.addEventListener('DOMContentLoaded', function () {
     var calendarEl = document.querySelector('.calendar');
     if (calendarEl) {
-        var calendar = new FullCalendar.Calendar(calendarEl, {
-            initialView: 'dayGridMonth',
-            initialDate: '2022-11-07',
-            selectable: true,
+        let calendar = new FullCalendar.Calendar(calendarEl, {
+            // plugins: [adaptivePlugin, interactionPlugin, dayGridPlugin, listPlugin, timeGridPlugin, resourceTimelinePlugin],
+            schedulerLicenseKey: 'XXX',
+            now: new Date().toISOString().substring(0, 10),
+            editable: true,
+            aspectRatio: 1.8,
+            scrollTime: '00:00',
             headerToolbar: {
-                left: 'prev,next today',
+                left: 'today prev,next',
                 center: 'title',
                 right: 'dayGridMonth,timeGridWeek,timeGridDay'
             },
-            events: [
-                {
-                    title: 'All Day Event',
-                    start: '2022-11-01'
-                },
-                {
-                    title: 'Long Event',
-                    start: '2022-11-07',
-                    end: '2022-11-10'
-                },
-                {
-                    groupId: '999',
-                    title: 'Repeating Event',
-                    start: '2022-11-09T16:00:00'
-                },
-                {
-                    groupId: '999',
-                    title: 'Repeating Event',
-                    start: '2022-11-16T16:00:00'
-                },
-                {
-                    title: 'Conference',
-                    start: '2022-11-11',
-                    end: '2022-11-13'
-                },
-                {
-                    title: 'Meeting',
-                    start: '2022-11-12T10:30:00',
-                    end: '2022-11-12T12:30:00'
-                },
-                {
-                    title: 'Lunch',
-                    start: '2022-11-12T12:00:00'
-                },
-                {
-                    title: 'Meeting',
-                    start: '2022-11-12T14:30:00'
-                },
-                {
-                    title: 'Birthday Party',
-                    start: '2022-11-18T10:18:00'
-                },
-                {
-                    title: 'Click for Google',
-                    url: 'http://google.com/',
-                    start: '2022-11-18'
+            initialView: 'dayGridMonth',
+            views: {
+                resourceTimelineThreeDays: {
+                    type: 'resourceTimeline',
+                    duration: { days: 3 },
+                    buttonText: '3 day'
                 }
-            ]
+            }
         });
+
         calendar.render();
+
+        document.querySelectorAll('.fc-scroller').forEach(scroll => {
+            scroll.style.overflow = 'hidden'
+        })
+        var mbDates = [
+            { id: 1, date: '2022-11-11', title: "Bayram" },
+            { id: 2, date: '2022-11-21', title: "Bayram1" },
+            { id: 3, date: '2022-10-11', title: "Bayram2" },
+            { id: 4, date: '2022-11-28', title: "Bayram3" },
+        ]
+        const elAllDateCell = document.querySelectorAll('td[role=gridcell]')
+        const elCalendarPrevBtn = document.querySelector('.fc-prev-button')
+        const elCalendarNextBtn = document.querySelector('.fc-next-button')
+        elCalendarPrevBtn.addEventListener('click', function () {
+            elAllDateCell.forEach(cell => {
+                var cellDate = cell.getAttribute('data-date');
+                for (let i = 0; i < mbDates.length; i++) {
+                    if (mbDates[i].date === cellDate) {
+                        cell.setAttribute('has-cell', 'has-cell')
+                    }
+                }
+            })
+        })
+        elCalendarNextBtn.addEventListener('click', function () {
+            elAllDateCell.forEach(cell => {
+                var cellDate = cell.getAttribute('data-date');
+                for (let i = 0; i < mbDates.length; i++) {
+                    if (mbDates[i].date === cellDate) {
+                        cell.setAttribute('has-cell', 'has-cell')
+                    }
+                }
+            })
+        })
+        elAllDateCell.forEach(cell => {
+            var cellDate = cell.getAttribute('data-date');
+            for (let i = 0; i < mbDates.length; i++) {
+                if (mbDates[i].date === cellDate) {
+                    cell.setAttribute('has-cell', 'has-cell')
+                }
+            }
+
+            cell.addEventListener('click', function () {
+                var cellDate = cell.getAttribute('data-date');
+                mbDates.filter(data => data.date == cellDate);
+                for (let i = 0; i < mbDates.length; i++) {
+                    if (mbDates[i].date === cellDate) {
+                        var tadbirModal = document.createElement('div');
+                        tadbirModal.classList.add('tadbir-modal');
+                        tadbirModal.textContent = mbDates[i].title
+                        this.appendChild(tadbirModal)
+                    }
+                }
+            })
+        })
     }
 });
