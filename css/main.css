@@ -555,7 +555,7 @@ html {
 
 .news-img img {
     min-width: 100%;
-    min-height: 200px;
+    min-height: 300px;
     object-fit: cover;
 }
 
@@ -584,7 +584,7 @@ html {
 
 .news-short-title {
     width: 100%;
-    height: 64px;
+    height: 60px;
     overflow: hidden;
     text-overflow: ellipsis;
     display: block;
@@ -1120,6 +1120,102 @@ html {
     border: none;
 }
 
+/* calendar style */
+.calendar {
+    width: 320px;
+    height: 260px;
+    padding: 10px;
+    border: 1px solid #EAECF0;
+    margin-bottom: 30px;
+    margin-right: 0 !important;
+}
+
+.calendar .fc-toolbar-chunk:last-child .fc-button-group {
+    display: none;
+}
+
+.calendar .fc-toolbar-title {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: -0.5px;
+    color: #051B44;
+}
+
+.calendar .fc-scrollgrid,
+.calendar td,
+.calendar th {
+    border: none !important;
+}
+
+.calendar .fc table td {
+    text-align: center;
+}
+
+.calendar table a {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: -0.5px;
+    color: #8F95B2;
+    text-decoration: none !important;
+}
+
+.calendar .fc-button {
+    padding: 0 !important;
+}
+
+.calendar td[has-cell='has-cell'] {
+    background-color: var(--bg-blue-color);
+    cursor: pointer;
+    position: relative;
+}
+
+.calendar td[has-cell='has-cell'] .tadbir-modal {
+    content: '';
+    width: 100px;
+    height: 60px;
+    background-color: var(--bg-blue-color);
+    position: absolute;
+    bottom: 100%;
+    left: -50%;
+    transform: translate(-50%, 0);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 5;
+    padding: 10px;
+    color: #fff;
+    font-weight: 700;
+}
+
+.calendar td[has-cell='has-cell'] .tadbir-modal::after {
+    content: 'X';
+    position: absolute;
+    top: 5px;
+    right: 10px;
+}
+
+.calendar td[has-cell='has-cell'] a {
+    color: #fff;
+}
+
+.calendar .fc-toolbar-chunk button[title="This month"] {
+    /* display: none; */
+    padding: 0 5px !important;
+}
+
+.calendar .fc-daygrid-day-top {
+    justify-content: center;
+}
+
+.calendar .fc-daygrid-day-events,
+.calendar .fc-daygrid-day-bg {
+    display: none;
+}
+
+/* td[role=gridcell]{
+    cursor: pointer;
+} */
+
 /* structure */
 .structure {
     margin-bottom: 30px;
@@ -1426,6 +1522,11 @@ textarea.appeal-form-control {
 .senat-page {
     padding: 50px 0 150px;
 }
+.rules {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+}
 
 .example-page {
     padding: 30px 0;
@@ -1447,4 +1548,18 @@ textarea.appeal-form-control {
 
 .example-page .news-short-title {
     height: 32px;
+}
+
+/* site-info-page style  */
+.site-info-page {
+    padding: 30px 0 0;
+}
+
+.site-info-page .info-tabel {
+    text-align: center;
+}
+
+/* korrupsiya-page style */
+.korrupsiya-page {
+    padding: 30px 0 0;
 }
